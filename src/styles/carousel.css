@@ -1,0 +1,35 @@
+.carousel {
+    position: relative;
+    max-width: 600px;
+    overflow: hidden;
+    margin: auto;
+ }
+
+.carousel-container {
+    width: 100%; /* Adjust based on your image size */
+    overflow: hidden; /* Prevents images from overflowing */
+    border-radius: 10px;
+    position: relative;
+}
+.carousel-track {
+    display: flex; /* Ensures images are in a row */
+    transition: transform 0.5s ease-in-out;
+    width: max-content; /* Allows all images to fit in a single row */
+}
+
+.carousel-track img {
+    width: 100%; /* Set a fixed width */
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevents images from shrinking */
+}
+
+.carousel-btn {
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}

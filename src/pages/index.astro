@@ -1,13 +1,38 @@
 ---
 import Bento from '../components/Bento.astro';
+import Project from '../components/Project.astro';
 import Layout from '../layouts/Layout.astro';
 
 import '../styles/global.css';
 
+const images_catchemall = [
+	"/catchemall-1.webp",
+	"/catchemall-2.webp",
+	"/catchemall-3.webp"
+]
+
+const images_danny = [
+	"/danny-1.webp",
+	"/danny-2.webp"
+]
+
+const images_nvim = [
+	"/minevim.webp"
+]
+
+const images_dana = [
+	"/dana-1.webp",
+	"/dana-2.webp"
+]
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout title="Porfolio">
 	<Bento />
+	<Project title="Catch'em all. Fishingrod" image_paths={images_catchemall}] description="A simple game about fishing and gambling" link="https://github.com/alexceend/UnityFishingGame"/>
+	<Project title="Danny's frog" image_paths={images_danny}] description="Frog :p (java)" link="https://github.com/alexceend/Danny-s-frog"/>
+	<Project title="NVIM PLUGINS" image_paths={images_nvim}] description="Nvim plugins made in lua." link="https://github.com/alexceend/nvim-plugins"/>
+	<Project title="Dana database" image_paths={images_dana}] description="A simple SQL database that contains relevant information about the DANA of Valencia." link="https://github.com/alexceend/dana-data-base"/>
+
 </Layout>

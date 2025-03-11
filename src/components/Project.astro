@@ -1,0 +1,37 @@
+---
+
+const { title, image_paths, description, link } = Astro.props;
+import '../styles/global.css';
+import '../styles/carousel.css';
+import { Icon } from 'astro-icon/components';
+
+---
+
+
+<section class="max-h-screen py-12 flex justify-center items-start">
+    <div class="bg-theme-light-blue-alpha-70 p-10 pt-5 rounded-md shadow-md">
+        <h1 class="flex justify-center text-white text-3xl pb-3 pt-3 bg-primary rounded-md border">{title}</h1>
+        <div class="carousel">
+            <div class="flex margin-auto justify-center pt-10 gap-5">
+                <button class="carousel-btn prev">‹</button>
+                <button class="carousel-btn next">›</button>
+            </div>
+            <div class="carousel-container flex">
+                <div class="carousel-track">
+                    {image_paths.map((source: string | null | undefined) => (
+                        <img src={source} alt={title} loading="lazy"/>
+                    ))}
+                </div>
+            </div>
+        </div>
+        <p class="text-white text-xl py-3 ml-10">{description}</p>
+        <a href={link} target="_blank" class="text-dark-blue ">
+            <div class="flex items-center space-x-2 justify-center">
+                <Icon name="github" />
+                <span>Github page</span>
+            </div>
+        </a>
+    </div>
+    <script type="module" src="/scripts/carousel.js" defer></script>
+
+</section>
