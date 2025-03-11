@@ -8,16 +8,16 @@ import { Icon } from 'astro-icon/components';
 ---
 
 
-<section class="max-h-screen py-12 flex justify-center items-start">
-    <div class="bg-theme-light-blue-alpha-70 p-10 pt-5 rounded-md shadow-md">
+<section class="max-h-screen pt-8 flex justify-center items-start">
+    <div class="bg-theme-light-blue-alpha-70 p-10 pt-5 rounded-md shadow-md h-full flex flex-col">
         <h1 class="flex justify-center text-white text-3xl pb-3 pt-3 bg-primary rounded-md border">{title}</h1>
-        <div class="carousel">
+        <div class="carousel h-full">
             <div class="flex margin-auto justify-center pt-10 gap-5">
                 <button class="carousel-btn prev">‹</button>
                 <button class="carousel-btn next">›</button>
             </div>
             <div class="carousel-container flex">
-                <div class="carousel-track">
+                <div class="carousel-track margin-auto">
                     {image_paths.map((source: string | null | undefined) => (
                         <img src={source} alt={title} loading="lazy"/>
                     ))}

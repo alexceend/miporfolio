@@ -24,15 +24,63 @@ const images_dana = [
 	"/dana-1.webp",
 	"/dana-2.webp"
 ]
+
+const images_unfollowers_insta = [
+	"/unfollowers-1.webp",
+	"/unfollowers-2.webp"
+]
+
+const images_converter = [
+	"/image-converter-1.webp"
+]
+const images_esteganografia = [
+	"/esteganografia-1.webp"
+]
+
+const images_jojobird = [
+	"/jojobird-1.webp",
+	"/jojobird-2.webp"
+]
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout title="Porfolio">
 	<Bento />
-	<Project title="Catch'em all. Fishingrod" image_paths={images_catchemall}] description="A simple game about fishing and gambling" link="https://github.com/alexceend/UnityFishingGame"/>
-	<Project title="Danny's frog" image_paths={images_danny}] description="Frog :p (java)" link="https://github.com/alexceend/Danny-s-frog"/>
-	<Project title="NVIM PLUGINS" image_paths={images_nvim}] description="Nvim plugins made in lua." link="https://github.com/alexceend/nvim-plugins"/>
-	<Project title="Dana database" image_paths={images_dana}] description="A simple SQL database that contains relevant information about the DANA of Valencia." link="https://github.com/alexceend/dana-data-base"/>
-
+	<div class="grid grid-cols-2 grid-rows-[auto_auto_auto] gap-4 w-full items-start">
+		<div class="flex col-span-2 row-span-1 gap-4 justify-center items-stretch">
+			<Project title="Catch'em all. Fishingrod" image_paths={images_catchemall}] description="A simple game about fishing and gambling" link="https://github.com/alexceend/UnityFishingGame"/>
+			<Project title="NVIM PLUGINS" image_paths={images_nvim}] 
+			description="Nvim plugins made in lua." link="https://github.com/alexceend/nvim-plugins"
+			class = ""
+			/>
+		</div>
+		<div class="flex col-span-2 row-span-1 gap-4 justify-center items-stretch">
+			<Project title="Danny's frog" image_paths={images_danny}] description="Frog :p (java)" link="https://github.com/alexceend/Danny-s-frog"/>
+			<Project title="Jojo bird" image_paths={images_jojobird}] 
+				description="Simple java game that I did with 2 classmates for a JAM of my University." link="https://github.com/alexceend/jojo-bird"
+				class = ""
+			/>
+		</div>
+		<div class="flex col-span-2 row-span-1 gap-4 justify-center items-stretch">
+			<Project title="Dana database" image_paths={images_dana}] 
+			description="A simple SQL database that contains relevant information about the DANA of Valencia." link="https://github.com/alexceend/dana-data-base"
+			class = ""
+			/>
+			<Project title="Image converter JAVA" image_paths={images_converter}] 
+				description="Simple java project that lets you convert images between png, jpg and bmp." link="https://github.com/alexceend/Image-Converter-Java"
+				class = ""
+			/>
+		</div>
+		<div class="flex col-span-2 row-span-1 gap-4 justify-center items-stretch">
+			<Project title="Unfollowers Insta" image_paths={images_unfollowers_insta}] 
+			description="Python script that lets you see the people that unfollowed you." link="https://github.com/alexceend/see-who-unfollowed-you-insta"
+			class = ""
+			/>
+			<Project title="Esteganografía Java" image_paths={images_esteganografia}] 
+			description="A simple java program that lets you hide text inside bmp images using esteganography." link="https://github.com/alexceend/EsteganografiaJava"
+			class = ""
+			/>
+		</div>
+	</div>
 </Layout>
