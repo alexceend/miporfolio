@@ -17,7 +17,7 @@ import { Icon } from 'astro-icon/components';
                 <button class="carousel-btn next">›</button>
             </div>
             <div class="carousel-container flex">
-                <div class="carousel-track margin-auto">
+                <div class="carousel-track mx-auto ">
                     {image_paths.map((source: string | null | undefined) => (
                         <img src={source} alt={title} loading="lazy"/>
                     ))}
