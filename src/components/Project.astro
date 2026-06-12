@@ -1,37 +1,79 @@
 ---
 
-const { title, image_paths, description, link } = Astro.props;
+const { title, image_paths, description, year, link } = Astro.props;
 import '../styles/global.css';
 import '../styles/carousel.css';
 import { Icon } from 'astro-icon/components';
 
+const hasCarousel = image_paths.length > 1;
+
 ---
 
+<article class="pt-8 h-full flex">
+    <div class="bg-theme-light-blue-alpha-70 p-10 pt-5 rounded-md shadow-md h-full w-full flex flex-col">
+        
+        <h1 class="flex justify-center text-white text-3xl pb-3 pt-3 bg-primary rounded-md border font-bold text-center">
+            {title}
+        </h1>
 
-<section class="max-h-screen pt-8 flex justify-center items-start">
-    <div class="bg-theme-light-blue-alpha-70 p-10 pt-5 rounded-md shadow-md h-full flex flex-col">
-        <h1 class="flex justify-center text-white text-3xl pb-3 pt-3 bg-primary rounded-md border">{title}</h1>
-        <div class="carousel h-full">
-            <div class="flex margin-auto justify-center pt-10 gap-5">
-                <button class="carousel-btn prev">‹</button>
-                <button class="carousel-btn next">›</button>
+        <div class="carousel">
+            <div class="h-8 flex justify-center items-center gap-5 mt-5">
+               <button 
+                    class:list={[
+                        "carousel-btn prev",
+                        hasCarousel 
+                            ? "bg-black text-orange-500 hover:bg-white hover:text-black cursor-pointer" 
+                            : "bg-gray-500 opacity-40 cursor-not-allowed"
+                    ]}
+                    disabled={!hasCarousel}
+                >
+                    ‹
+                </button>
+
+                <button 
+                    class:list={[
+                        "carousel-btn next",
+                        hasCarousel 
+                            ? "bg-black text-orange-500 hover:bg-white hover:text-black cursor-pointer" 
+                            : "bg-gray-500 opacity-40 cursor-not-allowed"
+                    ]}
+                    disabled={!hasCarousel}
+                >
+                    ›
+                </button>
             </div>
-            <div class="carousel-container flex">
-                <div class="carousel-track mx-auto ">
+
+            <div class="carousel-container mt-6 h-80 flex items-center justify-center overflow-hidden">
+                <div class="carousel-track mx-auto h-full flex items-center">
                     {image_paths.map((source: string | null | undefined) => (
-                        <img src={source} alt={title} loading="lazy"/>
+                        <img 
+                            src={source} 
+                            alt={title} 
+                            loading="lazy"
+                            class="max-h-full max-w-full object-contain rounded-md"
+                        />
                     ))}
                 </div>
             </div>
         </div>
-        <p class="text-white text-xl py-3 ml-10">{description}</p>
-        <a href={link} target="_blank" class="text-dark-blue ">
-            <div class="flex items-center space-x-2 justify-center">
-                <Icon name="github" />
-                <span>Github page</span>
-            </div>
-        </a>
-    </div>
-    <script type="module" src="/miporfolio/scripts/carousel.js" defer></script>
 
-</section>
+        <p class="text-white text-xl py-3 mt-6 mx-10">
+            {description}
+        </p>
+
+        <div class="mt-auto">
+            <p class="text-white font-bold text-xl py-3 text-center">
+                {year}
+            </p>
+
+            <a href={link} target="_blank" class="text-dark-blue">
+                <div class="flex items-center space-x-2 justify-center">
+                    <Icon name="github" />
+                    <span>Github page</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script type="module" src="/miporfolio/scripts/carousel.js" defer></script>
+</article>

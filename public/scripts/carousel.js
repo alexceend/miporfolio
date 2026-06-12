@@ -6,11 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const prevBtn = carousel.querySelector(".prev");
         const nextBtn = carousel.querySelector(".next");
 
-        if(slides.length <= 1){
-            prevBtn.style.display = "none";
-            nextBtn.style.display = "none";
-        }
-
         if (!track || slides.length === 0) return;
 
         function updateCarousel() {
