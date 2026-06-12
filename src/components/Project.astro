@@ -9,10 +9,10 @@ const hasCarousel = image_paths.length > 1;
 
 ---
 
-<article class="pt-8 h-full flex">
-    <div class="bg-theme-light-blue-alpha-70 p-10 pt-5 rounded-md shadow-md h-full w-full flex flex-col">
+<article class="pt-8 h-full flex w-full">
+    <div class="bg-theme-light-blue-alpha-70 p-4 sm:p-10 sm:pt-5 rounded-md shadow-md h-full w-full flex flex-col overflow-hidden">
         
-        <h1 class="flex justify-center text-white text-3xl pb-3 pt-3 bg-primary rounded-md border font-bold text-center">
+        <h1 class="flex justify-center text-white text-2xl sm:text-3xl pb-3 pt-3 bg-primary rounded-md border font-bold text-center">
             {title}
         </h1>
 
@@ -43,7 +43,7 @@ const hasCarousel = image_paths.length > 1;
                 </button>
             </div>
 
-            <div class="carousel-container mt-6 h-80 flex items-center justify-center overflow-hidden">
+            <div class="carousel-container mt-6 h-56 sm:h-80 flex items-center justify-center overflow-hidden">
                 <div class="carousel-track mx-auto h-full flex items-center">
                     {image_paths.map((source: string | null | undefined) => (
                         <img 
