@@ -124,7 +124,7 @@ const projects = [
 ];
 ---
 <section>
-    <div class = "justify-center  max-w-5xl m-auto flex flex-col mt-10 border bg-primary text-bold rounded-3xl py-4 text-white">
+    <div class = "justify-center  max-w-6xl m-auto flex flex-col mt-10 border bg-primary text-bold rounded-3xl py-4 text-white">
         <h1 class="text-5xl text-center font-bold">
              <span class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]">&lt;/&gt;</span> 
                 Proyectos
@@ -135,26 +135,27 @@ const projects = [
         </p>
     </div>
 
-    <div class="projects-carousel max-w-7xl mx-auto mt-8 px-4" data-projects-carousel>
-        <div class="projects-controls">
+    <div class="projects-carousel max-w-5xl mx-auto mt-8 px-4" data-projects-carousel>
+        <div class="projects-shell">
             <button type="button" class="project-nav prev" aria-label="Proyecto anterior">‹</button>
-            <button type="button" class="project-nav next" aria-label="Siguiente proyecto">›</button>
-        </div>
 
-        <div class="projects-viewport">
-            <div class="projects-track">
-                {projects.map((project) => (
-                    <div class="project-slide">
-                        <Project
-                            title={project.title}
-                            image_paths={project.image_paths}
-                            description={project.description}
-                            year={project.year}
-                            link={project.link}
-                        />
-                    </div>
-                ))}
+            <div class="projects-viewport">
+                <div class="projects-track">
+                    {projects.map((project) => (
+                        <div class="project-slide">
+                            <Project
+                                title={project.title}
+                                image_paths={project.image_paths}
+                                description={project.description}
+                                year={project.year}
+                                link={project.link}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
+
+            <button type="button" class="project-nav next" aria-label="Siguiente proyecto">›</button>
         </div>
     </div>
 </section>

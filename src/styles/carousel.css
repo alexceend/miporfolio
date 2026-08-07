@@ -37,11 +37,10 @@
     width: 100%;
 }
 
-.projects-controls {
+.projects-shell {
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
 }
 
 .project-nav {
@@ -52,6 +51,7 @@
     line-height: 1;
     width: 3rem;
     height: 3rem;
+    min-width: 3rem;
     border-radius: 9999px;
     cursor: pointer;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
@@ -64,6 +64,7 @@
 }
 
 .projects-viewport {
+    flex: 1;
     overflow: hidden;
     border-radius: 1.5rem;
 }
