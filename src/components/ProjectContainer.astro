@@ -135,6 +135,7 @@ const projects = [
         </p>
     </div>
 
+    <!--
     <div class="flex justify-center mt-4">
         <a
             href="/miporfolio/my-projects-grid"
@@ -143,6 +144,79 @@ const projects = [
             Ver todos
         </a>
     </div>
+    -->
+    <!-- Voy a añadir una pequeña broma de paywall -->
+
+    <div class="mt-4 flex justify-center">
+        <button
+            id="paywall-button"
+            type="button"
+            class="rounded-md bg-black px-4 py-2 text-sm text-white transition hover:bg-white hover:text-orange-700"
+        >
+            Ver todos
+        </button>
+    </div>
+
+    <!-- Fake Paywall -->
+    <div
+        id="paywall"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/70 px-4 backdrop-blur-sm"
+    >
+        <div class="w-full max-w-md rounded-xl bg-primary p-6 text-center shadow-2xl">
+            <h2 class="text-2xl font-bold text-white">
+                🔒 Contenido premium
+            </h2>
+
+            <p class="mt-3 text-white/80">
+                Para desbloquear todas mis contribuciones debes realizar un
+                pequeño pago de
+            </p>
+
+            <p class="mt-4 text-4xl font-bold text-orange-400">
+                5,00 €
+            </p>
+
+            <button
+                id="paypal-button"
+                type="button"
+                class="mt-6 w-full rounded-md bg-[#0070ba] px-4 py-3 font-bold text-white transition hover:bg-[#005ea6]"
+            >
+                PayPal
+            </button>
+
+            <button
+                id="close-paywall"
+                type="button"
+                class="mt-3 text-sm text-white/60 transition hover:text-white"
+            >
+                Cancelar
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const paywallButton = document.querySelector('#paywall-button');
+        const paywall = document.querySelector('#paywall');
+        const closePaywall = document.querySelector('#close-paywall');
+        const paypalButton = document.querySelector('#paypal-button');
+
+        paywallButton?.addEventListener('click', () => {
+            paywall?.classList.remove('hidden');
+            paywall?.classList.add('flex');
+        });
+
+        closePaywall?.addEventListener('click', () => {
+            paywall?.classList.add('hidden');
+            paywall?.classList.remove('flex');
+        });
+
+        paypalButton?.addEventListener('click', () => {
+            alert('ERROR 402: Too broke to continue...');
+            window.location.href = '/miporfolio/my-projects-grid';
+        });
+    </script>
+
+    <!-- Hasta aquí -->
 
     <div class="projects-carousel max-w-5xl mx-auto mt-8 px-4" data-projects-carousel>
         <div class="projects-shell">
