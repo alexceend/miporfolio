@@ -2,6 +2,7 @@
 import Project from '../components/Project.astro';
 
 import '../styles/global.css';
+import '../styles/carousel.css';
 
 const images_catchemall = [
 	"/miporfolio/catchemall-1.webp",
@@ -40,7 +41,6 @@ const images_jojobird = [
 	"/miporfolio/jojobird-2.webp"
 ]
 
-
 const cats_spikes = [
     "/miporfolio/cats-spikes-1.webp",
     "/miporfolio/cats-spikes-2.webp"
@@ -50,81 +50,114 @@ const question_mark = [
     "/miporfolio/question-mark.webp"
 ]
 
+const projects = [
+    {
+        title: "Catch'em all. Fishingrod",
+        image_paths: images_catchemall,
+        description: "Un juego simple en unity sobre pesca para experimentar con motores de creación de videojuegos",
+        year: "2025",
+        link: "https://github.com/alexceend/UnityFishingGame"
+    },
+    {
+        title: "NVIM PLUGINS",
+        image_paths: images_nvim,
+        description: "Plugins para Nvim hechos en lua para customizar mi Arch - Linux",
+        year: "2025",
+        link: "https://github.com/alexceend/nvim-plugins"
+    },
+    {
+        title: "Danny's frog",
+        image_paths: images_danny,
+        description: "Videojuego hecho en java para experimentar con Swing",
+        year: "2024",
+        link: "https://github.com/alexceend/Danny-s-frog"
+    },
+    {
+        title: "Jojo bird",
+        image_paths: images_jojobird,
+        description: "Videojuego hecho en java junto a 2 compañeros para una Game JAM de la universidad.",
+        year: "2024",
+        link: "https://github.com/alexceend/jojo-bird"
+    },
+    {
+        title: "Dana database",
+        image_paths: images_dana,
+        description: "Base de datos SQL simple que contiene información relevante sobre la DANA of Valencia. Incluyendo puntos de entrega de ayudas, páginas web de información y ayuda y las poblaciones y ciudades afectadas",
+        year: "2025",
+        link: "https://github.com/alexceend/dana-data-base"
+    },
+    {
+        title: "Solomillo Mus Counter",
+        image_paths: images_solomo,
+        description: "Aplicación Android Kotlin para contar los puntos del juego de cartas 'Mus'",
+        year: "2025",
+        link: "https://github.com/alexceend/solomillo-mus-counter"
+    },
+    {
+        title: "Unfollowers Insta",
+        image_paths: images_unfollowers_insta,
+        description: "Script en python que te permite ver los usuarios que no te siguen de vuelta en Instagram.",
+        year: "2024",
+        link: "https://github.com/alexceend/see-who-unfollowed-you-insta"
+    },
+    {
+        title: "Esteganografía Java",
+        image_paths: images_esteganografia,
+        description: "Programa en java que te permite ocultar texto en imágenes utilizando esteganografía.",
+        year: "2023",
+        link: "https://github.com/alexceend/EsteganografiaJava"
+    },
+    {
+        title: "Cats and spikes",
+        image_paths: cats_spikes,
+        description: "Mi primer videojuego hecho en Godot.",
+        year: "2019",
+        link: "https://github.com/alexceend/Cats-Spikes"
+    },
+    {
+        title: "Upcoming projects",
+        image_paths: question_mark,
+        description: "Upcoming projects...",
+        year: "",
+        link: "https://github.com/alexceend"
+    }
+];
 ---
 <section>
-    <div class = "justify-center  max-w-5xl m-auto flex flex-col mt-10 border bg-primary text-bold rounded-3xl py-4 text-white">
+    <div class = "justify-center  max-w-6xl m-auto flex flex-col mt-10 border bg-primary text-bold rounded-3xl py-4 text-white">
         <h1 class="text-5xl text-center font-bold">
              <span class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]">&lt;/&gt;</span> 
                 Proyectos
              <span class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]">&lt;/&gt;</span>
         </h1>
         <p class="text-s text-center mt-2">
-            Algunos proyectos que creé desde el 2019...
+            Algunos proyectos que he desarrollado desde 2019...
         </p>
     </div>
-    <div class="grid grid-cols-2 grid-rows-[auto_auto_auto] sm:grid-cols-1 gap-4 w-full items-stretch max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row col-span-2 row-span-1 gap-4 justify-center items-stretch">
-            <Project title="Catch'em all. Fishingrod" image_paths={images_catchemall} 
-            description="Un juego simple en unity sobre pesca para experimentar con motores de creación de videojuegos"
-            year="2025" 
-            link="https://github.com/alexceend/UnityFishingGame"/>
-            <Project title="NVIM PLUGINS" image_paths={images_nvim} 
-            description="Plugins para Nvim hechos en lua para customizar mi Arch - Linux" 
-            year="2025"
-            link="https://github.com/alexceend/nvim-plugins"
-            />
-        </div>
-        <div class="flex flex-col md:flex-row col-span-2 row-span-1 gap-4 justify-center items-stretch">
-            <Project title="Danny's frog" image_paths={images_danny} 
-            description="Videojuego hecho en java para experimentar con Swing"
-            year="2024" 
-            link="https://github.com/alexceend/Danny-s-frog"/>
-            <Project title="Jojo bird" image_paths={images_jojobird} 
-                description="Videojuego hecho en java junto a 2 compañeros para una Game JAM de la universidad." 
-                year="2024"
-                link="https://github.com/alexceend/jojo-bird"
-                class = ""
-            />
-        </div>
-        <div class="flex flex-col md:flex-row col-span-2 row-span-1 gap-4 justify-center items-stretch">
-            <Project title="Dana database" image_paths={images_dana} 
-            description="Base de datos SQL simple que contiene información relevante sobre la DANA of Valencia. Incluyendo puntos de entrega de ayudas, páginas web de información y ayuda y las poblaciones y ciudades afectadas" 
-            year="2025"
-            link="https://github.com/alexceend/dana-data-base"
-            class = ""
-            />
-            <Project title="Solomillo Mus Counter" image_paths={images_solomo}
-            description="Aplicación Android Kotlin para contar los puntos del juego de cartas 'Mus'"
-            year="2025"
-            link="https://github.com/alexceend/solomillo-mus-counter"
-            class = ""
-            />
-        </div>
-        <div class="flex flex-col md:flex-row col-span-2 row-span-1 gap-4 justify-center items-stretch">
-            <Project title="Unfollowers Insta" image_paths={images_unfollowers_insta}
-            description="Script en python que te permite ver los usuarios que no te siguen de vuelta en Instagram."
-            year="2024"
-            link="https://github.com/alexceend/see-who-unfollowed-you-insta"
-            class = ""
-            />
-            <Project title="Esteganografía Java" image_paths={images_esteganografia}
-            description="Programa en java que te permite ocultar texto en imágenes utilizando esteganografía."
-            year="2023"
-            link="https://github.com/alexceend/EsteganografiaJava"
-            class = ""
-            />
-        </div>
-        <div class="flex flex-col md:flex-row col-span-2 row-span-1 gap-4 justify-center items-stretch">
-            <Project title="Cats and spikes" image_paths={cats_spikes}
-            description="Mi primer videojuego hecho en Godot." 
-            link="https://github.com/alexceend/Cats-Spikes"
-            year="2019"
-            class = ""
-            />
-            <Project title="Upcoming projects" image_paths={question_mark}
-            description="Upcoming projects..." link="https://github.com/alexceend"
-            class = ""
-            />
+
+    <div class="projects-carousel max-w-5xl mx-auto mt-8 px-4" data-projects-carousel>
+        <div class="projects-shell">
+            <button type="button" class="project-nav prev" aria-label="Proyecto anterior">‹</button>
+
+            <div class="projects-viewport">
+                <div class="projects-track">
+                    {projects.map((project) => (
+                        <div class="project-slide">
+                            <Project
+                                title={project.title}
+                                image_paths={project.image_paths}
+                                description={project.description}
+                                year={project.year}
+                                link={project.link}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <button type="button" class="project-nav next projects-button" aria-label="Siguiente proyecto">›</button>
         </div>
     </div>
 </section>
+
+<script type="module" src="/miporfolio/scripts/projects-carousel.js" defer></script>

@@ -1,14 +1,24 @@
 ---
 import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import ProjectContainer from '../components/ProjectContainer.astro';
+import ContributionsContainer from '../components/ContributionsContainer.astro';
 import Layout from '../layouts/Layout.astro';
 
 import '../styles/global.css';
 ---
 
 <Layout title="Porfolio">
-	<Hero />
-	<ProjectContainer />
+	<Header />
+	<section id="hero" class="scroll-mt-16">
+		<Hero />
+	</section>
+	<section id="projects" class="scroll-mt-16">
+		<ProjectContainer />
+	</section>
+	<section id="contributions" class="scroll-mt-16">
+		<ContributionsContainer />
+	</section>
 	<Footer />
 </Layout>
