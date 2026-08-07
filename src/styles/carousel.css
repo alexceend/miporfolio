@@ -67,6 +67,7 @@
     flex: 1;
     overflow: hidden;
     border-radius: 1.5rem;
+    touch-action: pan-y;
 }
 
 .projects-track {
@@ -82,4 +83,12 @@
 
 .project-slide > article {
     width: 100%;
+}
+
+.projects-button {
+    align-items: center;
+    background: linear-gradient(135deg, #f59e0b, #fb923c);
+    text-decoration: none;
+    color: white;
+    text-align: center;
 }
