@@ -33,6 +33,12 @@
     padding: 10px;
 }
 
+.carousel-btn:active {
+    transform: scale(1.25);
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+}
+
 .projects-carousel {
     width: 100%;
 }
@@ -56,12 +62,17 @@
     cursor: pointer;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    padding-bottom: 0.25rem;
+    padding-bottom: 0.3rem;
 }
 
 .project-nav:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 24px rgba(0, 0, 0, 0.2);
+}
+
+.project-nav:active {
+    transform: scale(1.5);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
 }
 
 .projects-viewport {
