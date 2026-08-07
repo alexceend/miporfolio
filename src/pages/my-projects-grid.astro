@@ -7,16 +7,18 @@ import '../styles/global.css';
 ---
 
 <Layout>
-    <main class="min-h-screen">
-        <div class="mx-auto max-w-5xl px-4 pt-6">
+    <header class="sticky top-0 z-50 w-full">
+        <nav class="mx-auto flex h-12 max-w-5xl items-center px-4">
             <a
                 href="/miporfolio"
-                class="inline-flex items-center rounded-md bg-black px-4 py-2 text-sm font-semibold text-white transition hover:bg-white hover:text-orange-700"
+                class="rounded-md bg-black px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-white hover:text-orange-700"
             >
-                ← Volver a la página principal
+                ← Volver
             </a>
-        </div>
+        </nav>
+    </header>
 
+    <main>
         <ProjectContainerGrid />
     </main>
 
