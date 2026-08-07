@@ -1,0 +1,64 @@
+---
+import Project from '../components/Project.astro';
+
+import '../styles/global.css';
+import '../styles/carousel.css';
+
+const web_velada = [
+    "/miporfolio/web-velada.webp"
+]
+
+const projects = [
+    {
+        title: "La velada del año - Midudev",
+        image_paths: web_velada,
+        description: "Web de 'La velada del año' creada por Midudev",
+        year: "",
+        link: "https://github.com/midudev/la-velada-web-oficial",
+        prs: [
+            { name: "midudev/la-velada-web-oficial#1483 ", link: "https://github.com/midudev/la-velada-web-oficial/pull/1483"},
+            { name: "midudev/la-velada-web-oficial#1215 ", link: "https://github.com/midudev/la-velada-web-oficial/pull/1215"},
+            { name: "midudev/la-velada-web-oficial#1205 ", link: "https://github.com/midudev/la-velada-web-oficial/pull/1205"}
+        ]
+    }
+];
+---
+<section>
+    <div class = "justify-center  max-w-6xl m-auto flex flex-col mt-10 border bg-primary text-bold rounded-3xl py-4 text-white">
+        <h1 class="text-5xl text-center font-bold">
+             <span class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]">&lt;/&gt;</span> 
+                Contribuciones
+             <span class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]">&lt;/&gt;</span>
+        </h1>
+        <p class="text-s text-center mt-2">
+            Algunos proyectos de código abierto en los que he contribuido
+        </p>
+    </div>
+
+    <div class="projects-carousel max-w-5xl mx-auto mt-8 px-4" data-projects-carousel>
+        <div class="projects-shell">
+            <button type="button" class="project-nav prev" aria-label="Proyecto anterior">‹</button>
+
+            <div class="projects-viewport">
+                <div class="projects-track">
+                    {projects.map((project) => (
+                        <div class="project-slide">
+                            <Project
+                                title={project.title}
+                                image_paths={project.image_paths}
+                                description={project.description}
+                                year={project.year}
+                                link={project.link}
+                                prs={project.prs}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <button type="button" class="project-nav next projects-button" aria-label="Siguiente proyecto">›</button>
+        </div>
+    </div>
+</section>
+
+<script type="module" src="/miporfolio/scripts/projects-carousel.js" defer></script>
