@@ -10,3 +10,7 @@
     --color-theme-red: #7B2D26;
     --color-theme-white: #F0F3F5;
 }
+
+html {
+    scroll-behavior: smooth;
+}
