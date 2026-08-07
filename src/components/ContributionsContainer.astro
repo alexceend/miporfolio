@@ -1,5 +1,5 @@
 ---
-import Project from '../components/Project.astro';
+import ContributionProject from '../components/ContributionProject.astro';
 
 import '../styles/global.css';
 import '../styles/carousel.css';
@@ -43,7 +43,7 @@ const projects = [
                 <div class="projects-track">
                     {projects.map((project) => (
                         <div class="project-slide">
-                            <Project
+                            <ContributionProject
                                 title={project.title}
                                 image_paths={project.image_paths}
                                 description={project.description}

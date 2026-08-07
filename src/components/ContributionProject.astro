@@ -81,9 +81,10 @@ const hasCarousel = image_paths.length > 1;
                             href={pr.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="text-orange-400 hover:text-orange-300 text-sm underline"
+                            class="flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm underline"
                         >
-                            {pr.name}
+                            <img src="/miporfolio/merge-icon.svg" alt="Merge icon" class="w-6 h-6" />
+                            <span>{pr.name}</span>
                         </a>
                     ))}
                 </div>
