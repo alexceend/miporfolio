@@ -123,50 +123,16 @@ const projects = [
     }
 ];
 ---
-<section>
-    <div class = "justify-center  max-w-6xl m-auto flex flex-col mt-10 border bg-primary text-bold rounded-3xl py-4 text-white">
-        <h1 class="text-5xl text-center font-bold">
-             <span class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]">&lt;/&gt;</span> 
-                Proyectos
-             <span class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]">&lt;/&gt;</span>
-        </h1>
-        <p class="text-s text-center mt-2">
-            Algunos proyectos que he desarrollado desde 2019...
-        </p>
-    </div>
-
-    <div class="flex justify-center mt-4">
-        <a
-            href="/miporfolio/my-projects-grid"
-            class="rounded-md bg-black px-4 py-2 text-sm text-white transition hover:bg-white hover:text-orange-700"
-        >
-            Ver todos
-        </a>
-    </div>
-
-    <div class="projects-carousel max-w-5xl mx-auto mt-8 px-4" data-projects-carousel>
-        <div class="projects-shell">
-            <button type="button" class="project-nav prev scale-75 sm:scale-100" aria-label="Proyecto anterior">‹</button>
-
-            <div class="projects-viewport">
-                <div class="projects-track">
-                    {projects.map((project) => (
-                        <div class="project-slide">
-                            <Project
-                                title={project.title}
-                                image_paths={project.image_paths}
-                                description={project.description}
-                                year={project.year}
-                                link={project.link}
-                            />
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            <button type="button" class="project-nav next projects-button scale-75 sm:scale-100" aria-label="Siguiente proyecto">›</button>
+<div class="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-6 px-4 sm:grid-cols-2">
+    {projects.map((project) => (
+        <div>
+            <Project
+                title={project.title}
+                image_paths={project.image_paths}
+                description={project.description}
+                year={project.year}
+                link={project.link}
+            />
         </div>
-    </div>
-</section>
-
-<script type="module" src="/miporfolio/scripts/projects-carousel.js" defer></script>
+    ))}
+</div>
