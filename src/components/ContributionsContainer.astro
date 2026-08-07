@@ -8,6 +8,10 @@ const web_velada = [
     "/miporfolio/web-velada.webp"
 ]
 
+const graphene_os = [
+    "/miporfolio/graphene-os.webp"
+]
+
 const projects = [
     {
         title: "La velada del año - Midudev",
@@ -19,6 +23,16 @@ const projects = [
             { name: "midudev/la-velada-web-oficial#1483 ", link: "https://github.com/midudev/la-velada-web-oficial/pull/1483"},
             { name: "midudev/la-velada-web-oficial#1215 ", link: "https://github.com/midudev/la-velada-web-oficial/pull/1215"},
             { name: "midudev/la-velada-web-oficial#1205 ", link: "https://github.com/midudev/la-velada-web-oficial/pull/1205"}
+        ]
+    },
+    {
+        title: "GrapheneOS",
+        image_paths: graphene_os,
+        description: "Sistema operativo de código abierto centrado en la privacidad y seguridad para dispositivos móviles",
+        year: "",
+        link: "https://github.com/GrapheneOS/GrapheneOS",
+        prs: [
+            { name: "GrapheneOS/GrapheneOS#684 ", link: "https://github.com/GrapheneOS/Camera/pull/684"}
         ]
     }
 ];
@@ -35,9 +49,9 @@ const projects = [
         </p>
     </div>
 
-    <div class="projects-carousel max-w-5xl mx-auto mt-8 px-4" data-projects-carousel>
+    <div class="projects-carousel max-w-5xl mx-auto mt-8 px-4" data-contributions-carousel>
         <div class="projects-shell">
-            <button type="button" class="project-nav prev" aria-label="Proyecto anterior">‹</button>
+            <button type="button" class="project-nav prev contributions-prev" aria-label="Proyecto anterior">‹</button>
 
             <div class="projects-viewport">
                 <div class="projects-track">
@@ -56,7 +70,7 @@ const projects = [
                 </div>
             </div>
 
-            <button type="button" class="project-nav next projects-button" aria-label="Siguiente proyecto">›</button>
+            <button type="button" class="project-nav next contributions-next" aria-label="Siguiente proyecto">›</button>
         </div>
     </div>
 </section>

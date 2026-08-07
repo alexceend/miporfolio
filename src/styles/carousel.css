@@ -77,6 +77,7 @@
 
 .projects-viewport {
     flex: 1;
+    width: 100%;
     overflow: hidden;
     border-radius: 1.5rem;
     touch-action: pan-y;
@@ -85,12 +86,15 @@
 .projects-track {
     display: flex;
     transition: transform 0.45s ease-in-out;
+    width: 100%;
 }
 
 .project-slide {
     flex: 0 0 100%;
     width: 100%;
+    min-width: 100%;
     padding: 0.25rem;
+    box-sizing: border-box;
 }
 
 .project-slide > article {
