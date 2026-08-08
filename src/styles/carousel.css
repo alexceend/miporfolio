@@ -51,8 +51,9 @@
 
 .project-nav {
     border: none;
-    background: linear-gradient(135deg, #000000, #44077d);
-    color: white;
+    /*background: linear-gradient(135deg, #000000, #44077d);*/
+    background: var(--color-theme-dark-gray);
+    color: var(--color-theme-light-yellow);
     font-size: 1.75rem;
     line-height: 1;
     width: 3rem;
