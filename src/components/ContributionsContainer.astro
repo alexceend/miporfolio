@@ -3,59 +3,10 @@ import ContributionProject from '../components/ContributionProject.astro';
 
 import '../styles/global.css';
 import '../styles/carousel.css';
+import { contributions as projects } from '../data/content';
 
-const web_velada = [
-    "/miporfolio/web-velada.webp"
-]
-
-const graphene_os = [
-    "/miporfolio/graphene-os.webp"
-]
-
-const sharpemu = [
-    "/miporfolio/sharpemu.webp"
-]
-
-const projects = [
-    {
-        title: "La velada del año - Midudev",
-        image_paths: web_velada,
-        description: "Web de 'La velada del año' creada por Midudev",
-        year: "",
-        link: "https://github.com/midudev/la-velada-web-oficial",
-        prs: [
-            { name: "midudev/la-velada-web-oficial#1483 ", link: "https://github.com/midudev/la-velada-web-oficial/pull/1483"},
-            { name: "midudev/la-velada-web-oficial#1215 ", link: "https://github.com/midudev/la-velada-web-oficial/pull/1215"},
-            { name: "midudev/la-velada-web-oficial#1205 ", link: "https://github.com/midudev/la-velada-web-oficial/pull/1205"}
-        ]
-    },
-    {
-        title: "GrapheneOS",
-        image_paths: graphene_os,
-        description: "Sistema operativo de código abierto centrado en la privacidad y seguridad para dispositivos móviles",
-        year: "",
-        link: "https://github.com/GrapheneOS/GrapheneOS",
-        prs: [
-            { name: "GrapheneOS/GrapheneOS#684 ", link: "https://github.com/GrapheneOS/Camera/pull/684"}
-        ]
-    },
-    {
-        title: "SharpEmu",
-        image_paths: sharpemu,
-        description: "Emulador experimental de PS5 para Windows, Linux y macOS ",
-        year: "",
-        link: "https://github.com/SharpEmu/SharpEmu",
-        prs: [
-            { name: "sharpemu/sharpemu#161 ", link: "https://github.com/SharpEmu/SharpEmu/pull/161"},
-            { name: "sharpemu/sharpemu#162 ", link: "https://github.com/SharpEmu/SharpEmu/pull/162"},   
-            { name: "sharpemu/sharpemu#165 ", link: "https://github.com/SharpEmu/SharpEmu/pull/165"},
-            { name: "sharpemu/sharpemu#148 ", link: "https://github.com/SharpEmu/SharpEmu/pull/148"},
-            { name: "sharpemu/sharpemu#279 ", link: "https://github.com/SharpEmu/SharpEmu/pull/279"},
-            { name: "sharpemu/sharpemu#735 ", link: "https://github.com/SharpEmu/SharpEmu/pull/735"},
-        ]
-    }
-];
 ---
+
 <section>
     <div class = "justify-center max-w-6xl m-auto flex flex-col mt-10 border bg-primary text-bold rounded-3xl py-4 text-white">
         <h1 class="text-2xl sm:text-5xl sm:gap-2 text-center font-bold">
