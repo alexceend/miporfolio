@@ -7,7 +7,24 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		
+		<!-- Favicons -->
+
+		<link
+			rel="icon"
+			href="/miporfolio/favicon-dark.ico"
+			media="(prefers-color-scheme: light)"
+			type="image/x-icon"
+		/>
+
+		<link
+			rel="icon"
+			href="/miporfolio/favicon-white.ico"
+			media="(prefers-color-scheme: dark)"
+			type="image/x-icon"
+		/>
+
+
 		<meta name="description" content="Alex's Portfolio - Software Developer showcasing projects in Unity, Java, Python, and more" />
 		<meta name="keywords" content="software developer, portfolio, Unity, Java, Python, web development" />
 		<meta name="author" content="Alex" />
