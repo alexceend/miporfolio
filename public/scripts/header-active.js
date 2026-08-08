@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     links.forEach((link) => {
       const isActive = link.getAttribute('href') === `#${activeId}`;
-      link.classList.toggle('bg-black', isActive);
-      link.classList.toggle('text-orange-300', isActive);
-      link.classList.toggle('text-white', isActive);
-      link.classList.toggle('bg-white', !isActive);
-      link.classList.toggle('text-black', !isActive);
+      link.classList.remove('bg-white', 'text-white', 'text-black');
+      link.classList.toggle('bg-theme-dark-gray', isActive);
+      link.classList.toggle('text-theme-light-yellow', isActive);
+      link.classList.toggle('bg-theme-light-yellow', !isActive);
+      link.classList.toggle('text-theme-dark-gray', !isActive);
     });
   };
 
