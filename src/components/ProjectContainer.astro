@@ -5,6 +5,8 @@ import "../styles/global.css";
 import "../styles/carousel.css";
 import "../styles/terminal.css";
 import { projects } from "../data/content";
+import { Icon } from "astro-icon/components";
+
 ---
 
 <section>
@@ -16,23 +18,14 @@ import { projects } from "../data/content";
         >
             <div class="flex items-center gap-2">
                 <button type="button" aria-label="Minimizar" class="window-button">
-                    <img
-                        src="/miporfolio/src/icons/window-min-svgrepo-com.svg"
-                        alt=""
-                    />
+                    <Icon name="window-min"/>
                 </button>
 
                 <button type="button" aria-label="Maximizar" class="window-button">
-                    <img
-                        src="/miporfolio/src/icons/window-max-svgrepo-com.svg"
-                        alt=""
-                    />
+                    <Icon name="window-max"/>
                 </button>
                 <button type="button" aria-label="Cerrar" class="window-button">
-                    <img
-                        src="/miporfolio/src/icons/window-close-svgrepo-com.svg"
-                        alt=""
-                    />
+                    <Icon name="window-close"/>
                 </button>
             </div>
             <span
