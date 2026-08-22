@@ -41,14 +41,7 @@ import { projects } from "../data/content";
                 ~/portfolio/projects
             </span>
         </div>
-
-        <span
-            class="text-xs font-mono text-theme-light-yellow mt-4 ml-10"
-        >
-            <span class="text-theme-beige">alex</span><span class="text-theme-white">@porfolio</span>>$ echo $TITULO
-        </span>
-
-        <h1 class="text-5xl text-center font-bold">
+        <h1 class="text-5xl text-center font-bold pt-4">
             <span
                 class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]"
                 >&lt;/&gt;</span
@@ -63,26 +56,29 @@ import { projects } from "../data/content";
             Algunos proyectos que he desarrollado desde 2019...
         </p>
 
+
         <span
-            class="text-xs font-mono text-theme-light-yellow mt-4 ml-10"
+            class="text-[10px] sm:text-xs font-mono text-theme-light-yellow mt-4 ml-[2px] sm:ml-10"
         >
             <span class="text-theme-beige">alex</span><span class="text-theme-white">@porfolio</span>>$ cat *
         </span>
+        <div class="mx-4 sm:mx-10 mt-2 border-t border-white/50"></div>
 
         <div class="flex flex-col items-center mt-4">
             <a
                 href="/miporfolio/my-projects-grid"
                 class="rounded-md bg-black px-4 py-2 text-sm text-white transition hover:bg-white hover:text-orange-700"
             >
-                Ver todos
+                Ver todos<span class="inline-block w-[0.5em]" id="loading-dots"></span>
             </a>
         </div>
 
         <span
-            class="text-xs font-mono text-theme-light-yellow mt-4 ml-10"
+            class="text-[10px] sm:text-xs font-mono text-theme-light-yellow mt-4 ml-[2px] sm:ml-10"
         >
             <span class="text-theme-beige">alex</span><span class="text-theme-white">@porfolio</span>&gt;$ while read -r project; do echo "$project"; done &lt; projects.txt
         </span>
+        <div class="mx-4 sm:mx-10 mt-2 border-t border-white/50"></div>
 
         <div
             class="projects-carousel max-w-5xl mx-auto px-4"
@@ -120,8 +116,14 @@ import { projects } from "../data/content";
                 >
             </div>
         </div>
+        <span
+            class="text-[10px] sm:text-xs font-mono text-theme-light-yellow mt-4 mb-4 ml-[2px] sm:ml-10"
+        >
+            <span class="text-theme-white">:q</span>
+        </span>
     </div>
 </section>
 
 <script type="module" src="/miporfolio/scripts/projects-carousel.js" defer
 ></script>
+<script src="./scripts/loading-dots.js"></script>
