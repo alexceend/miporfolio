@@ -1,10 +1,10 @@
-const dots = document.getElementById("loading-dots");
+const dots = document.querySelectorAll(".loading-dots");
 
-if (dots) {
+dots.forEach((element) => {
     let count = 0;
 
     setInterval(() => {
         count = (count + 1) % 4;
-        dots.textContent = ".".repeat(count);
-    }, 400);
-}
+        element.textContent = ".".repeat(count);
+    }, 500);
+});
