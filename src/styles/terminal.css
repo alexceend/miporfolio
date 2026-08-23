@@ -20,3 +20,41 @@
     transform: scale(1.15);
     opacity: 0.8;
 }
+
+.terminal-window {
+    transition:
+        width 0.25s ease,
+        max-width 0.25s ease,
+        margin 0.25s ease,
+        border-radius 0.25s ease;
+}
+
+.terminal-window-content {
+    transition: opacity 0.2s ease;
+}
+
+
+.terminal-window.window-minimized .terminal-window-content {
+    display: none;
+}
+
+
+
+.terminal-window.window-maximized {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    max-width: none;
+
+    margin: 0;
+
+    border-radius: 0;
+
+    z-index: 50;
+}
+
+.terminal-window.window-maximized .terminal-window-content {
+    flex: 1;
+    overflow-y: auto;
+}
