@@ -16,8 +16,8 @@ const hasCarousel = image_paths.length > 1;
             {title}
         </h1>
 
-        <div class="carousel relative mt-5">
-            <div class="carousel-container mt-6 h-56 sm:h-80 flex items-center justify-center overflow-hidden">
+        <div class="carousel relative">
+            <div class="carousel-container h-56 sm:h-80 flex items-center justify-center overflow-hidden">
                 <div class="carousel-track mx-auto h-full flex items-center">
                     {image_paths.map((source: string | null | undefined) => (
                         <img 
@@ -56,11 +56,11 @@ const hasCarousel = image_paths.length > 1;
 
         </div>
 
-        <p class="text-theme-light-yellow text-xs sm:text-xl py-3 mt-6 mx-2 sm:mx-10 text-center">
+        <p class="text-theme-light-yellow text-xs sm:text-xl py-1 mx-2 sm:mx-10 text-center">
             {description}
         </p>
         <div class="mt-auto">
-            <p class="text-theme-light-yellow font-bold text-xl py-3 text-center">
+            <p class="text-theme-light-yellow font-bold text-xl py-1 text-center">
                 {year}
             </p>
 
