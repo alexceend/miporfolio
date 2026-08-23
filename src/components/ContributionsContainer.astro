@@ -1,57 +1,130 @@
 ---
-import ContributionProject from '../components/ContributionProject.astro';
+import ContributionProject from "../components/ContributionProject.astro";
 
-import '../styles/global.css';
-import '../styles/carousel.css';
-import { contributions as projects } from '../data/content';
-
+import "../styles/global.css";
+import "../styles/carousel.css";
+import "../styles/terminal.css";
+import { contributions as projects } from "../data/content";
+import { Icon } from "astro-icon/components";
 ---
 
 <section>
-    <div class = "justify-center max-w-6xl m-auto flex flex-col mt-10 border bg-primary text-bold rounded-3xl py-4 text-white">
-        <h1 class="text-2xl sm:text-5xl sm:gap-2 text-center font-bold">
-             <span class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]">&lt;/&gt;</span> 
-                <span class="text-theme-light-yellow">Contribuciones</span>
-             <span class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]">&lt;/&gt;</span>
+    <div
+        class="justify-center max-w-5xl mx-[6px] sm:mx-auto flex flex-col mt-10 border bg-primary text-bold text-white rounded-3xl overflow-hidden"
+    >
+        <div
+            class="relative flex items-center h-7 px-5 border-b border-white/10 py-4"
+        >
+            <div class="flex items-center gap-2">
+                <button type="button" aria-label="Minimizar" class="window-button">
+                    <Icon name="window-min" />
+                </button>
+
+                <button type="button" aria-label="Maximizar" class="window-button">
+                    <Icon name="window-max" />
+                </button>
+
+                <button type="button" aria-label="Cerrar" class="window-button">
+                    <Icon name="window-close" />
+                </button>
+            </div>
+
+            <span
+                class="absolute left-1/2 -translate-x-1/2 text-xs font-mono text-theme-light-yellow"
+            >
+                ~/portfolio/contributions
+            </span>
+        </div>
+
+        <h1 class="text-5xl text-center font-bold pt-4">
+            <span
+                class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]"
+                >&lt;/&gt;</span
+            >
+            <span class="text-theme-light-yellow">Contribuciones</span>
+            <span
+                class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]"
+                >&lt;/&gt;</span
+            >
         </h1>
+
         <p class="text-s text-center mt-2 text-theme-light-yellow">
             Algunos proyectos de código abierto en los que he contribuido
         </p>
-    </div>
 
-    <div class="flex justify-center mt-4">
-        <a
-            href="/miporfolio/my-contributions-grid"
-            class="rounded-md bg-black px-4 py-2 text-sm text-white transition hover:bg-white hover:text-orange-700"
+        <span
+            class="text-[10px] sm:text-xs font-mono text-theme-light-yellow mt-4 ml-[2px] sm:ml-10"
         >
-            Ver todos
-        </a>
-    </div>
+            <span class="text-theme-beige">alex</span><span class="text-theme-white">@porfolio</span>&gt;$ cat *
+        </span>
 
-    <div class="projects-carousel max-w-5xl mx-auto mt-8 px-4" data-contributions-carousel>
-        <div class="projects-shell">
-            <button type="button" class="project-nav prev contributions-prev scale-75 sm:scale-100" aria-label="Proyecto anterior">‹</button>
+        <div class="mx-[2px] sm:mx-10 mt-2 border-t border-white/50"></div>
 
-            <div class="projects-viewport">
-                <div class="projects-track">
-                    {projects.map((project) => (
-                        <div class="project-slide">
-                            <ContributionProject
-                                title={project.title}
-                                image_paths={project.image_paths}
-                                description={project.description}
-                                year={project.year}
-                                link={project.link}
-                                prs={project.prs}
-                            />
-                        </div>
-                    ))}
+        <div class="flex flex-col items-center mt-4">
+            <a
+                href="/miporfolio/my-contributions-grid"
+                class="rounded-md bg-black px-4 py-2 text-sm text-theme-light-yellow transition hover:bg-white hover:text-orange-700"
+            >
+                Ver todos<span class="inline-block w-[0.5em]" id="loading-dots"></span>
+            </a>
+        </div>
+
+        <span
+            class="text-[10px] sm:text-xs font-mono text-theme-light-yellow mt-4 ml-[2px] sm:ml-10"
+        >
+            <span class="text-theme-beige">alex</span><span class="text-theme-white">@porfolio</span>&gt;$ while read -r contribution; do echo "$contribution"; done &lt; contributions.txt
+        </span>
+
+        <div class="mx-[2px] sm:mx-10 mt-2 border-t border-white/50"></div>
+
+        <div
+            class="projects-carousel max-w-5xl mx-auto px-4"
+            data-contributions-carousel
+        >
+            <div class="projects-shell">
+                <button
+                    type="button"
+                    class="project-nav prev contributions-prev scale-75 sm:scale-100"
+                    aria-label="Contribución anterior"
+                >
+                    ‹/
+                </button>
+
+                <div class="projects-viewport">
+                    <div class="projects-track">
+                        {
+                            projects.map((project) => (
+                                <div class="project-slide">
+                                    <ContributionProject
+                                        title={project.title}
+                                        image_paths={project.image_paths}
+                                        description={project.description}
+                                        year={project.year}
+                                        link={project.link}
+                                        prs={project.prs}
+                                    />
+                                </div>
+                            ))
+                        }
+                    </div>
                 </div>
-            </div>
 
-            <button type="button" class="project-nav next contributions-next scale-75 sm:scale-100" aria-label="Siguiente proyecto">›</button>
+                <button
+                    type="button"
+                    class="project-nav next contributions-next scale-75 sm:scale-100"
+                    aria-label="Siguiente contribución"
+                >
+                    /›
+                </button>
+            </div>
         </div>
     </div>
 </section>
 
-<script type="module" src="/miporfolio/scripts/projects-carousel.js" defer></script>
+<script
+    type="module"
+    src="/miporfolio/scripts/projects-carousel.js"
+    defer
+></script>
+
+<script src="./scripts/loading-dots.js"></script>
