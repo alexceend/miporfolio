@@ -16,33 +16,7 @@ const hasCarousel = image_paths.length > 1;
             {title}
         </h1>
 
-        <div class="carousel">
-            <div class="h-8 flex justify-center items-center gap-5 mt-5">
-               <button 
-                    class:list={[
-                        "carousel-btn prev",
-                        hasCarousel 
-                            ? "bg-theme-dark-gray text-theme-light-yellow hover:bg-white hover:text-black cursor-pointer" 
-                            : "bg-gray-500 opacity-40 cursor-not-allowed"
-                    ]}
-                    disabled={!hasCarousel}
-                >
-                    ‹
-                </button>
-
-                <button 
-                    class:list={[
-                        "carousel-btn next",
-                        hasCarousel 
-                            ? "bg-theme-dark-gray text-theme-light-yellow hover:bg-white hover:text-black cursor-pointer" 
-                            : "bg-gray-500 opacity-40 cursor-not-allowed"
-                    ]}
-                    disabled={!hasCarousel}
-                >
-                    ›
-                </button>
-            </div>
-
+        <div class="carousel relative mt-5">
             <div class="carousel-container mt-6 h-56 sm:h-80 flex items-center justify-center overflow-hidden">
                 <div class="carousel-track mx-auto h-full flex items-center">
                     {image_paths.map((source: string | null | undefined) => (
@@ -55,6 +29,31 @@ const hasCarousel = image_paths.length > 1;
                     ))}
                 </div>
             </div>
+
+            <button 
+                class:list={[
+                    "carousel-btn prev absolute left-2 top-1/2 -translate-y-1/2 z-10",
+                    hasCarousel 
+                        ? "bg-theme-dark-gray text-theme-light-yellow hover:bg-white hover:text-black cursor-pointer" 
+                        : "bg-gray-500 opacity-40 cursor-not-allowed"
+                ]}
+                disabled={!hasCarousel}
+            >
+                ‹
+            </button>
+
+            <button 
+                class:list={[
+                    "carousel-btn next absolute right-2 top-1/2 -translate-y-1/2 z-10",
+                    hasCarousel 
+                        ? "bg-theme-dark-gray text-theme-light-yellow hover:bg-white hover:text-black cursor-pointer" 
+                        : "bg-gray-500 opacity-40 cursor-not-allowed"
+                ]}
+                disabled={!hasCarousel}
+            >
+                ›
+            </button>
+
         </div>
 
         <p class="text-theme-light-yellow text-xs sm:text-xl py-3 mt-6 mx-2 sm:mx-10 text-center">
