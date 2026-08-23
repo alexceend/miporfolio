@@ -11,17 +11,18 @@ import { Icon } from "astro-icon/components";
 
 <section>
     <div
-        class="justify-center max-w-5xl mx-[6px] sm:mx-auto flex flex-col mt-10 border bg-primary text-bold text-white rounded-3xl overflow-hidden"
+        data-window-id="projects"
+        class="terminal-window justify-center max-w-5xl mx-[6px] sm:mx-auto flex flex-col mt-10 border bg-primary text-bold text-white rounded-3xl overflow-hidden"
     >
         <div
             class="relative flex items-center h-7 px-5 border-b border-white/10 py-4"
         >
             <div class="flex items-center gap-2">
-                <button type="button" aria-label="Minimizar" class="window-button">
+                <button type="button" aria-label="Minimizar" class="window-button" data-window-minimize>
                     <Icon name="window-min"/>
                 </button>
 
-                <button type="button" aria-label="Maximizar" class="window-button">
+                <button type="button" aria-label="Maximizar" class="window-button" data-window-maximize>
                     <Icon name="window-max"/>
                 </button>
                 <button type="button" aria-label="Cerrar" class="window-button">
@@ -34,79 +35,83 @@ import { Icon } from "astro-icon/components";
                 ~/portfolio/projects
             </span>
         </div>
-        <h1 class="text-5xl text-center font-bold pt-4">
-            <span
-                class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]"
-                >&lt;/&gt;</span
-            >
-            <span class="text-theme-light-yellow">Proyectos</span>
-            <span
-                class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]"
-                >&lt;/&gt;</span
-            >
-        </h1>
-        <p class="text-s text-center mt-2 text-theme-light-yellow">
-            Algunos proyectos que he desarrollado desde 2019...
-        </p>
 
+        <div class="terminal-window-content">
 
-        <span
-            class="text-[10px] sm:text-xs font-mono text-theme-light-yellow mt-4 ml-[2px] sm:ml-10"
-        >
-            <span class="text-theme-beige">alex</span><span class="text-theme-white">@porfolio</span>>$ cat *
-        </span>
-        <div class="mx-[2px] sm:mx-10 mt-2 border-t border-white/50"></div>
-
-        <div class="flex flex-col items-center mt-4">
-            <a
-                href="/miporfolio/my-projects-grid"
-                class="rounded-md bg-black px-4 py-2 text-sm text-theme-light-yellow transition hover:bg-white hover:text-orange-700"
-            >
-                Ver todos<span class="inline-block w-[0.5em] loading-dots"></span>
-            </a>
-        </div>
-
-        <span
-            class="text-[10px] sm:text-xs font-mono text-theme-light-yellow mt-4 ml-[2px] sm:ml-10"
-        >
-            <span class="text-theme-beige">alex</span><span class="text-theme-white">@porfolio</span>&gt;$ while read -r project; do echo "$project"; done &lt; projects.txt
-        </span>
-        <div class="mx-[2px] sm:mx-10 mt-2 border-t border-white/50"></div>
-
-        <div
-            class="projects-carousel max-w-5xl mx-auto px-4"
-            data-projects-carousel
-        >
-            <div class="projects-shell">
-                <button
-                    type="button"
-                    class="project-nav prev scale-75 sm:scale-100"
-                    aria-label="Proyecto anterior">‹/</button
+            <h1 class="text-5xl text-center font-bold pt-4">
+                <span
+                    class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]"
+                    >&lt;/&gt;</span
                 >
+                <span class="text-theme-light-yellow">Proyectos</span>
+                <span
+                    class="text-orange-400 drop-shadow-[0_0_6px_rgba(251,146,60,0.45)]"
+                    >&lt;/&gt;</span
+                >
+            </h1>
+            <p class="text-s text-center mt-2 text-theme-light-yellow">
+                Algunos proyectos que he desarrollado desde 2019...
+            </p>
 
-                <div class="projects-viewport">
-                    <div class="projects-track">
-                        {
-                            projects.map((project) => (
-                                <div class="project-slide">
-                                    <Project
-                                        title={project.title}
-                                        image_paths={project.image_paths}
-                                        description={project.description}
-                                        year={project.year}
-                                        link={project.link}
-                                    />
-                                </div>
-                            ))
-                        }
+
+            <span
+                class="text-[10px] sm:text-xs font-mono text-theme-light-yellow mt-4 ml-[2px] sm:ml-10"
+            >
+                <span class="text-theme-beige">alex</span><span class="text-theme-white">@porfolio</span>>$ cat *
+            </span>
+            <div class="mx-[2px] sm:mx-10 mt-2 border-t border-white/50"></div>
+
+            <div class="flex flex-col items-center mt-4">
+                <a
+                    href="/miporfolio/my-projects-grid"
+                    class="rounded-md bg-black px-4 py-2 text-sm text-theme-light-yellow transition hover:bg-white hover:text-orange-700"
+                >
+                    Ver todos<span class="inline-block w-[0.5em] loading-dots"></span>
+                </a>
+            </div>
+
+            <span
+                class="text-[10px] sm:text-xs font-mono text-theme-light-yellow mt-4 ml-[2px] sm:ml-10"
+            >
+                <span class="text-theme-beige">alex</span><span class="text-theme-white">@porfolio</span>&gt;$ while read -r project; do echo "$project"; done &lt; projects.txt
+            </span>
+            <div class="mx-[2px] sm:mx-10 mt-2 border-t border-white/50"></div>
+
+            <div
+                class="projects-carousel max-w-5xl mx-auto px-4"
+                data-projects-carousel
+            >
+                <div class="projects-shell">
+                    <button
+                        type="button"
+                        class="project-nav prev scale-75 sm:scale-100"
+                        aria-label="Proyecto anterior">‹/</button
+                    >
+
+                    <div class="projects-viewport">
+                        <div class="projects-track">
+                            {
+                                projects.map((project) => (
+                                    <div class="project-slide">
+                                        <Project
+                                            title={project.title}
+                                            image_paths={project.image_paths}
+                                            description={project.description}
+                                            year={project.year}
+                                            link={project.link}
+                                        />
+                                    </div>
+                                ))
+                            }
+                        </div>
                     </div>
-                </div>
 
-                <button
-                    type="button"
-                    class="project-nav next projects-button scale-75 sm:scale-100"
-                    aria-label="Siguiente proyecto">/›</button
-                >
+                    <button
+                        type="button"
+                        class="project-nav next projects-button scale-75 sm:scale-100"
+                        aria-label="Siguiente proyecto">/›</button
+                    >
+                </div>
             </div>
         </div>
     </div>
